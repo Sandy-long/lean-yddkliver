@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <title>胰岛素抵抗与肝脏脂肪代谢</title>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'default',
+    themeVariables: {
+      fontSize: '30px' // 修改流程图字体大小
+    }
+  });
+  </script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      color: #2c3e50;
+      line-height: 1.6;
+    }
+
+    /* ===== 标题样式 ===== */
+    .title-wrapper {
+      background-color: #e0e0e0;
+      padding: 2rem 1rem;
+      text-align: center;
+      border-bottom: 4px solid #3498db;
+    }
+    .title-wrapper h2 {
+      font-size: 2.2rem;
+      color: #2c3e50;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    /* ===== Mermaid 样式 ===== */
+    .content {
+      padding: 2rem 1rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .mermaid {
+      background: transparent;
+      padding: 0;
+      border-radius: 0;
+      box-shadow: none;
+      margin-bottom: 2rem;
+    }
+    .mermaid svg {
+      background-color: transparent !important;
+    }
+
+    /* ===== 总结和参考文献容器样式 ===== */
+    .info-box {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 2rem 2.5rem;
+      box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+      max-width: 900px;
+      margin: 0 auto 3rem auto;
+      color: #34495e;
+	  border-left: 4px solid #3498db;  /* 加这行 */
+    }
+
+    /* 总结部分 - 严格按照官网字体、颜色、大小 */
+    .info-box .summary {
+      margin-bottom: 2rem;
+      font-size: 16px;
+      color: #222222;
+      line-height: 1.5;
+    }
+    .info-box .summary strong {
+      display: block;
+      font-weight: 600;
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      color: #1e3a5f;
+    }
+    .info-box .summary ul {
+      padding-left: 1.5em;
+      margin: 0;
+      list-style-type: disc;
+    }
+    .info-box .summary ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* 参考文献部分 - 严格按照官网字体、颜色、大小 */
+    .info-box .references {
+      font-size: 16px;
+      color: #555555;
+      line-height: 1.5;
+    }
+    .info-box .references strong {
+      color: #1e3a5f;
+      display: block;
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    .info-box .references p {
+      margin: 0.3rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="title-wrapper">
+    <h2>胰岛素抵抗与肝脏脂肪代谢</h2>
+  </div>
+
+  <div class="content">
+    <div class="mermaid">
+graph TD
+  A[内脏脂肪↑（脂肪细胞肥大 + 炎症）]
+  A --> B[释放大量游离脂肪酸（FFA）↑]
+  B --> C[FFA经门静脉进入肝脏]
+
+  C --> D[部分FFA氧化供能]
+  C --> E[多余FFA → 合成甘油三酯（TG）]
+  E --> F[TG↑ → 极低密度脂蛋白（VLDL）↑]
+
+  F --> G[VLDL将TG运往外周组织]
+  G --> H[腹部脂肪储存TG → 腹部脂肪↑（大肚子）]
+  H --> I[长期导致皮下 + 内脏脂肪双重积聚]
+  F --> J[VLDL过多 → 动脉粥样硬化风险↑]
+
+  C --> K[肝脏回收胆固醇（HDL介导）]
+  K --> L[HDL回收外周胆固醇 → 返回肝脏]
+  L --> M[胆固醇用于合成VLDL或排泄入胆汁]
+
+  E --> N[肝脂积聚 → 脂肪肝]
+  N --> O[干扰胰岛素信号传导]
+  O --> P[促进糖异生↑ 胰岛素抵抗↑]
+  P --> Q[胰岛素抵抗↑]
+
+  Q --> R1[胰岛素抑制脂解作用↓]
+  R1 --> R[脂肪储存能力↓（特别是皮下脂肪）]
+  R --> S[脂肪组织功能恶化：炎症↑ 分化受限（脂肪细胞只长个头，不长数量）]
+  S --> T[FFA释放进一步增加]
+  T --> B
+
+  style A fill:#f9f9f9,stroke:#999,stroke-width:1px
+  style N fill:#fbe4d5
+  style Q fill:#fde9d9
+  style S fill:#fcd5ce
+  style F fill:#e0f3ff
+  style G fill:#e0f3ff
+  style H fill:#e0f3ff
+    </div>
+
+    <section class="info-box">
+      <div class="summary">
+        <strong>总结：胰岛素抵抗让游离脂肪酸升高，导致脂肪代谢混乱和肝脏脂肪堆积</strong>
+        <ul>
+          <li>内脏脂肪增多会释放大量游离脂肪酸（FFA），通过门静脉进入肝脏。</li>
+          <li>肝脏将多余的FFA合成为甘油三酯（TG），进而形成极低密度脂蛋白（VLDL）运往全身，导致脂肪堆积和动脉粥样硬化风险上升。</li>
+          <li>多余脂肪在肝脏积聚形成脂肪肝，干扰胰岛素信号传导，进一步加剧胰岛素抵抗。</li>
+          <li>胰岛素抵抗使脂肪更难储存，脂肪组织功能下降，炎症上升、细胞分化受限，进一步释放FFA，最终形成一个不断恶化的代谢恶性循环。</li>
+        </ul>
+      </div>
+
+      <div class="references">
+        <strong>参考文献</strong>
+        <p>Gencer Sancar, Birkenfeld AL. The role of adipose tissue dysfunction in hepatic insulin resistance and T2D. Journal of Endocrinology. 2024.</p>
+        <p>Snel M, et al. From excess adiposity to insulin resistance: the role of free fatty acids. Diabetes Care. 2012.</p>
+        <p>Krauss RM. Fat depots, free fatty acids, and dyslipidemia. Current Opinion in Lipidology. 2013.</p>
+        <p>Guilherme A, et al. Adipose tissue dysfunction and the pathogenesis of metabolic syndrome. World Journal of Diabetes. 2012.</p>
+        <p>Boden G. Free fatty acids, insulin resistance, and type 2 diabetes mellitus. Current Diabetes Reports. 1999.</p>
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>
